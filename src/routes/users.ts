@@ -1,6 +1,23 @@
 import { Router } from "express";
-import {createBlogUser} from "../services/userService";
+import {
+  createBlogUser,
+  listUsers,
+  getUserById,
+  updateUser,
+  toggleFollowUser,
+  getFollowers,
+  getFollowing,
+  searchUsers,
+} from "../services/userService";
 
 const router = Router();
 
-router.post('/api', createBlogUser)
+router.get("/search", searchUsers);
+
+router.get("/", listUsers);
+router.post("/", createBlogUser);
+router.get("/:id", getUserById);
+router.patch("/:id", updateUser);
+router.post("/:id/follow", toggleFollowUser);
+router.get("/:id/followers", getFollowers);
+router.get("/:id/following", getFollowing);
