@@ -10,7 +10,7 @@ import {
   searchUsers,
 } from "../services/userService";
 
-const router = Router();
+export const router = Router();
 
 router.get("/search", searchUsers);
 

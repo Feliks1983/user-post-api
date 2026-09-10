@@ -11,7 +11,7 @@ import {
   searchPosts,
 } from "../services/postService";
 
-const router = Router();
+export const router = Router();
 
 router.get("/search", searchPosts);
 router.get("/author/:authorId", getPostsByAuthor);
